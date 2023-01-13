@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+void input(int nums[],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		cin>>nums[i];
+	}
+}
+int linearsearch(int nums[],int n,int key)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		if(nums[i]==key)
+		{
+		   break;	
+		}
+	}
+	if(i==n)
+	return -1;
+	
+	else
+	return i+1;
+}
+
+int main()
+{
+	int n,key;
+	cout<<"Enter the size of the array\n";
+	cin>>n;
+	
+	int nums[n];
+	
+	cout<<"Enter the array elements\n";
+	input(nums,n);
+	
+	cout<<"Enter the key element to be searched in nums array\n";
+	cin>>key;
+	
+    int p = linearsearch(nums,n,key);
+    
+    cout<<"The element: "<<key<<" is found at position: "<<p;
+	return 0;
+}
