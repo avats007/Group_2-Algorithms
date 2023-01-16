@@ -1,0 +1,22 @@
+#include<iostream>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void towerofhanoi(int start,int end,char s,char m,char d)
+{
+	if(start>end)
+	return;
+	
+	towerofhanoi(start,end-1,s,d,m);
+	cout<<"Move disk from "<<s<<" to "<<d<<endl;
+	towerofhanoi(start,end-1,m,s,d);
+}
+int main()
+{
+	int start,end;
+	cout<<"Enter the start and end"<<endl;
+	cin>>start>>end;
+	towerofhanoi(start,end,'A','B','C');
+	return 0;
+}
